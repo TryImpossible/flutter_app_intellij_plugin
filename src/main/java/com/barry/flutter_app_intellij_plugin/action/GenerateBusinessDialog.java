@@ -1,5 +1,7 @@
 package com.barry.flutter_app_intellij_plugin.action;
 
+import com.intellij.notification.NotificationGroupManager;
+import com.intellij.notification.NotificationType;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
 import org.jetbrains.annotations.Nullable;
@@ -9,11 +11,11 @@ import javax.swing.*;
 public class GenerateBusinessDialog extends DialogWrapper {
 
     public interface Listener {
-        void onGenerateBusinessClicked(String businessName, BusinessCategory businessCategory, BlocStyle blocStyle);
+        void onGenerateBusinessClicked(BusinessDataModel data);
     }
 
+    private final Project project;
     private final Listener listener;
-
     private JPanel contentPane;
     private JTextField businessNameTextField;
     private JRadioButton screenRadioButton;
@@ -23,9 +25,10 @@ public class GenerateBusinessDialog extends DialogWrapper {
 
     public GenerateBusinessDialog(Project project, Listener listener) {
         super(project);
+        this.project = project;
+        this.listener = listener;
         init();
         setTitle("Generate App Business Template");
-        this.listener = listener;
     }
 
     @Override
@@ -35,9 +38,15 @@ public class GenerateBusinessDialog extends DialogWrapper {
 
     @Override
     protected void doOKAction() {
-        super.doOKAction();
         final String businessName = businessNameTextField.getText();
+        if (businessName.isEmpty()) {
+            NotificationGroupManager.getInstance().getNotificationGroup("GenerateBusinessTemplateNotificationId")
+                    .createNotification("Business name can't be empty", NotificationType.ERROR)
+                    .notify(project);
+            return;
+        }
 
+        super.doOKAction();
         BusinessCategory businessCategory = BusinessCategory.SCREEN;
         if (screenRadioButton.isSelected()) {
             businessCategory = BusinessCategory.SCREEN;
@@ -46,14 +55,14 @@ public class GenerateBusinessDialog extends DialogWrapper {
             businessCategory = BusinessCategory.WIDGET;
         }
 
-        BlocStyle blocStyle = BlocStyle.BLOC;
+        StateManagement stateManagement = StateManagement.BLOC;
         if (blocRadioButton.isSelected()) {
-            blocStyle = BlocStyle.BLOC;
+            stateManagement = StateManagement.BLOC;
         }
         if (cubeRadioButton.isSelected()) {
-            blocStyle = BlocStyle.CUBE;
+            stateManagement = StateManagement.CUBE;
         }
 
-        listener.onGenerateBusinessClicked(businessName, businessCategory, blocStyle);
+        listener.onGenerateBusinessClicked(new BusinessDataModel(businessName, businessCategory, stateManagement));
     }
 }
