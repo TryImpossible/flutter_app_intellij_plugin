@@ -1,5 +1,6 @@
 package com.barry.flutter_app_intellij_plugin.action;
 
+import com.barry.flutter_app_intellij_plugin.common.NotificationTools;
 import com.intellij.notification.NotificationGroupManager;
 import com.intellij.notification.NotificationType;
 import com.intellij.openapi.project.Project;
@@ -37,12 +38,15 @@ public class GenerateBusinessDialog extends DialogWrapper {
     }
 
     @Override
+    public @Nullable JComponent getPreferredFocusedComponent() {
+        return businessNameTextField;
+    }
+
+    @Override
     protected void doOKAction() {
         final String businessName = businessNameTextField.getText();
         if (businessName.isEmpty()) {
-            NotificationGroupManager.getInstance().getNotificationGroup("GenerateBusinessTemplateNotificationId")
-                    .createNotification("Business name can't be empty", NotificationType.ERROR)
-                    .notify(project);
+            NotificationTools.showError(project, "Business name can't be empty");
             return;
         }
 
