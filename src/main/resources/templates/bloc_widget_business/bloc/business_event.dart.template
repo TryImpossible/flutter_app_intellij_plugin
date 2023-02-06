@@ -1,0 +1,14 @@
+part of '{{business_snake_case}}_bloc.dart';
+
+abstract class {{business_pascal_case}}Event extends Equatable {
+  const {{business_pascal_case}}Event();
+
+  @override
+  List<Object?> get props => <Object?>[];
+}
+
+class {{business_pascal_case}}InitEvent extends {{business_pascal_case}}Event {}
+
+class {{business_pascal_case}}DisposeEvent extends {{business_pascal_case}}Event {}
+
+class {{business_pascal_case}}RequestDataEvent extends {{business_pascal_case}}Event {}

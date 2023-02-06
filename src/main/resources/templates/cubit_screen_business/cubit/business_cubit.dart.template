@@ -1,0 +1,17 @@
+import 'package:equatable/equatable.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+part '{{business_snake_case}}_state.dart';
+
+class {{business_pascal_case}}Cubit extends Cubit<{{business_pascal_case}}State> {
+  {{business_pascal_case}}Cubit(Map<String, dynamic>? arguments)
+      : super({{business_pascal_case}}State.initial(arguments));
+
+  void init() {
+    requestData();
+  }
+
+  void dispose() {}
+
+  void requestData() {}
+}

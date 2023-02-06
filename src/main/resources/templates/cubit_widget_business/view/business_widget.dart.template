@@ -1,0 +1,18 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../cubit/{{business_snake_case}}_cubit.dart';
+
+part '{{business_snake_case}}_view.dart';
+
+class {{business_pascal_case}}Widget extends StatelessWidget {
+  const {{business_pascal_case}}Widget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocProvider<{{business_pascal_case}}Cubit>(
+      create: (BuildContext context) => {{business_pascal_case}}Cubit()..init(),
+      child: const {{business_pascal_case}}View(),
+    );
+  }
+}

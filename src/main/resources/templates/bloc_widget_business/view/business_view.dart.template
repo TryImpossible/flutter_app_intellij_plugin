@@ -1,0 +1,10 @@
+part of '{{business_snake_case}}_widget.dart';
+
+class {{business_pascal_case}}View extends StatelessWidget {
+  const {{business_pascal_case}}View({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
+  }
+}

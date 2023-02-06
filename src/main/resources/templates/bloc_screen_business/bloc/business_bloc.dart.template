@@ -1,0 +1,37 @@
+import 'package:equatable/equatable.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+part '{{business_snake_case}}_event.dart';
+part '{{business_snake_case}}_state.dart';
+
+class {{business_pascal_case}}Bloc extends Bloc<{{business_pascal_case}}Event, {{business_pascal_case}}State> {
+  {{business_pascal_case}}Bloc(Map<String, dynamic>? arguments)
+      : super({{business_pascal_case}}State.initial(arguments)) {
+    on<{{business_pascal_case}}InitEvent>(_onInit);
+    on<{{business_pascal_case}}DisposeEvent>(_onDispose);
+    on<{{business_pascal_case}}RequestDataEvent>(_onRequestData);
+  }
+
+  @override
+  Future<void> close() {
+    add({{business_pascal_case}}DisposeEvent());
+    return super.close();
+  }
+
+  void _onInit(
+    {{business_pascal_case}}InitEvent event,
+    Emitter<{{business_pascal_case}}State> emit,
+  ) {
+    add({{business_pascal_case}}RequestDataEvent());
+  }
+
+  void _onDispose(
+    {{business_pascal_case}}DisposeEvent event,
+    Emitter<{{business_pascal_case}}State> emit,
+  ) {}
+
+  void _onRequestData(
+    {{business_pascal_case}}RequestDataEvent event,
+    Emitter<{{business_pascal_case}}State> emit,
+  ) {}
+}

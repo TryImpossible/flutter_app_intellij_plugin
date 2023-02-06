@@ -1,0 +1,2 @@
+export 'bloc/{{business_snake_case}}_bloc.dart';
+export 'view/{{business_snake_case}}_widget.dart';

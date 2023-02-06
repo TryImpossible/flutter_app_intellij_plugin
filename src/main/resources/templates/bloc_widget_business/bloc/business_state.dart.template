@@ -1,0 +1,10 @@
+part of '{{business_snake_case}}_bloc.dart';
+
+class {{business_pascal_case}}State extends Equatable {
+  const {{business_pascal_case}}State._();
+
+  const {{business_pascal_case}}State.initial() : this._();
+
+  @override
+  List<Object?> get props => <Object?>[];
+}

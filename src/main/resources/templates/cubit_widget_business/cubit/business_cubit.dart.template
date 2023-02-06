@@ -1,0 +1,16 @@
+import 'package:bloc/bloc.dart';
+import 'package:equatable/equatable.dart';
+
+part '{{business_snake_case}}_state.dart';
+
+class {{business_pascal_case}}Cubit extends Cubit<{{business_pascal_case}}State> {
+  {{business_pascal_case}}Cubit() : super(const {{business_pascal_case}}State.initial());
+
+  void init() {
+    requestData();
+  }
+
+  void dispose() {}
+
+  void requestData() {}
+}
