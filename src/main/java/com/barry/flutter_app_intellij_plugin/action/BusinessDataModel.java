@@ -1,15 +1,5 @@
 package com.barry.flutter_app_intellij_plugin.action;
 
-enum BusinessCategory {
-    SCREEN,
-    WIDGET
-}
-
-enum StateManagement {
-    BLOC,
-    CUBE
-}
-
 public class BusinessDataModel {
     final String businessName;
     final BusinessCategory businessCategory;
@@ -19,6 +9,18 @@ public class BusinessDataModel {
         this.businessName = businessName;
         this.businessCategory = businessCategory;
         this.stateManagement = stateManagement;
+    }
+
+    public String getBusinessName() {
+        return businessName;
+    }
+
+    public BusinessCategory getBusinessCategory() {
+        return businessCategory;
+    }
+
+    public StateManagement getStateManagement() {
+        return stateManagement;
     }
 
     @Override
