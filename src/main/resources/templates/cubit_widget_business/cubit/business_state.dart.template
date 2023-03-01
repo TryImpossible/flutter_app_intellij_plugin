@@ -5,6 +5,10 @@ class {{business_pascal_case}}State extends Equatable {
 
   const {{business_pascal_case}}State.initial() : this._();
 
+  {{business_pascal_case}}State copyWith() {
+    return const {{business_pascal_case}}State._();
+  }
+
   @override
   List<Object?> get props => <Object?>[];
 }

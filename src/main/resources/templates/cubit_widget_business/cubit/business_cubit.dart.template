@@ -6,6 +6,12 @@ part '{{business_snake_case}}_state.dart';
 class {{business_pascal_case}}Cubit extends Cubit<{{business_pascal_case}}State> {
   {{business_pascal_case}}Cubit() : super(const {{business_pascal_case}}State.initial());
 
+  @override
+  Future<void> close() {
+    dispose();
+    return super.close();
+  }
+
   void init() {
     requestData();
   }

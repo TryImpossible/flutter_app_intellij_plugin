@@ -7,6 +7,12 @@ class {{business_pascal_case}}Cubit extends Cubit<{{business_pascal_case}}State>
   {{business_pascal_case}}Cubit(Map<String, dynamic>? arguments)
       : super({{business_pascal_case}}State.initial(arguments));
 
+  @override
+  Future<void> close() {
+    dispose();
+    return super.close();
+  }
+
   void init() {
     requestData();
   }
