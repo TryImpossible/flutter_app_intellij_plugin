@@ -5,18 +5,25 @@
 
     <!-- Public plugin name should be written in Title Case.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
-    <name>flutter app intellij plugin</name>
+    <name>Flutter App Tools</name>
 
     <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
-    <vendor email="support@yourcompany.com" url="https://www.yourcompany.com">YourCompany</vendor>
+    <vendor email="865068275@qq.com" url="https://github.com/TryImpossible/flutter_app_intellij_plugin">Barry</vendor>
 
     <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
          Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
     <description><![CDATA[
-        Enter short description for your plugin here.<br>
-        <em>most HTML tags may be used</em>
-        ]]></description>
+        Provides help for effectively creating business templates for Flutter apps.
+        ]]>
+    </description>
+
+    <change-notes><![CDATA[
+        <ul>
+            <li>v1.0 - Generate business template</li>
+        </ul>
+        ]]>
+    </change-notes>
 
     <!-- Product and plugin compatibility requirements.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
@@ -37,6 +44,6 @@
     <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
-        <notificationGroup id="GenerateBusinessTemplateNotificationId" displayType="BALLOON" />
+        <notificationGroup id="GenerateBusinessTemplateNotificationId" displayType="BALLOON"/>
     </extensions>
 </idea-plugin>
