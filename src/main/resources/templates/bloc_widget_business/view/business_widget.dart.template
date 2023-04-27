@@ -11,7 +11,7 @@ class {{business_pascal_case}}Widget extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider<{{business_pascal_case}}Bloc>(
       create: (BuildContext context) =>
-          {{business_pascal_case}}Bloc()..add({{business_pascal_case}}InitEvent()),
+          {{business_pascal_case}}Bloc()..add(const {{business_pascal_case}}InitEvent()),
       child: const {{business_pascal_case}}View(),
     );
   }

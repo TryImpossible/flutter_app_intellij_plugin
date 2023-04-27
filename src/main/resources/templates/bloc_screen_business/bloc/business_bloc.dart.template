@@ -10,11 +10,12 @@ class {{business_pascal_case}}Bloc extends Bloc<{{business_pascal_case}}Event, {
     on<{{business_pascal_case}}InitEvent>(_onInit);
     on<{{business_pascal_case}}DisposeEvent>(_onDispose);
     on<{{business_pascal_case}}RequestDataEvent>(_onRequestData);
+    on<{{business_pascal_case}}UpdateStateEvent>(_onUpdateState);
   }
 
   @override
   Future<void> close() {
-    add({{business_pascal_case}}DisposeEvent());
+    add(const {{business_pascal_case}}DisposeEvent());
     return super.close();
   }
 
@@ -22,7 +23,7 @@ class {{business_pascal_case}}Bloc extends Bloc<{{business_pascal_case}}Event, {
     {{business_pascal_case}}InitEvent event,
     Emitter<{{business_pascal_case}}State> emit,
   ) {
-    add({{business_pascal_case}}RequestDataEvent());
+    add(const {{business_pascal_case}}RequestDataEvent());
   }
 
   void _onDispose(
@@ -34,4 +35,11 @@ class {{business_pascal_case}}Bloc extends Bloc<{{business_pascal_case}}Event, {
     {{business_pascal_case}}RequestDataEvent event,
     Emitter<{{business_pascal_case}}State> emit,
   ) {}
+
+  void _onUpdateState(
+    {{business_pascal_case}}UpdateStateEvent event,
+    Emitter<{{business_pascal_case}}State> emit,
+  ) {
+    emit(event.state);
+  }
 }

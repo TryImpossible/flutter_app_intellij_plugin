@@ -13,7 +13,7 @@ class {{business_pascal_case}}Screen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider<{{business_pascal_case}}Bloc>(
       create: (BuildContext context) =>
-          {{business_pascal_case}}Bloc(arguments)..add({{business_pascal_case}}InitEvent()),
+          {{business_pascal_case}}Bloc(arguments)..add(const {{business_pascal_case}}InitEvent()),
       child: const {{business_pascal_case}}View(),
     );
   }
