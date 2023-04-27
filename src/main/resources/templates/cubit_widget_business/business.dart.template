@@ -1,2 +1,3 @@
 export 'cubit/{{business_snake_case}}_cubit.dart';
+export 'view/{{business_snake_case}}_view.dart';
 export 'view/{{business_snake_case}}_widget.dart';

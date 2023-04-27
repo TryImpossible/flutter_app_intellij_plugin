@@ -1,4 +1,4 @@
-part of '{{business_snake_case}}_widget.dart';
+import 'package:flutter/material.dart';
 
 class {{business_pascal_case}}View extends StatelessWidget {
   const {{business_pascal_case}}View({Key? key}) : super(key: key);
