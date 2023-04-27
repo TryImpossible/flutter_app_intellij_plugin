@@ -14,8 +14,8 @@ public class CubitBusinessGenerator extends BusinessGenerator {
     }
 
     protected String provideTemplateFolder() {
-        if (data.getBusinessCategory() == BusinessCategory.SCREEN) {
-            return "cubit_screen_business";
+        if (data.getBusinessCategory() == BusinessCategory.PAGE) {
+            return "cubit_page_business";
         }
         if (data.getBusinessCategory() == BusinessCategory.WIDGET) {
             return "cubit_widget_business";
@@ -25,13 +25,13 @@ public class CubitBusinessGenerator extends BusinessGenerator {
     }
 
     protected List<String> provideTemplateFilesTree() {
-        if (data.getBusinessCategory() == BusinessCategory.SCREEN) {
+        if (data.getBusinessCategory() == BusinessCategory.PAGE) {
             return Arrays.asList(
                     "cubit",
                     "cubit/business_cubit.dart.template",
                     "cubit/business_state.dart.template",
                     "view",
-                    "view/business_screen.dart.template",
+                    "view/business_page.dart.template",
                     "view/business_view.dart.template",
                     "business.dart.template"
             );

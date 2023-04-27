@@ -5,8 +5,8 @@ import '../cubit/{{business_snake_case}}_cubit.dart';
 
 part '{{business_snake_case}}_view.dart';
 
-class {{business_pascal_case}}Screen extends StatelessWidget {
-  const {{business_pascal_case}}Screen({Key? key, this.arguments}) : super(key: key);
+class {{business_pascal_case}}Page extends StatelessWidget {
+  const {{business_pascal_case}}Page({Key? key, this.arguments}) : super(key: key);
   final Map<String, dynamic>? arguments;
 
   @override

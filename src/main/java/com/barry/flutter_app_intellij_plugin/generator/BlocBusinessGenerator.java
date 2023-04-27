@@ -14,8 +14,8 @@ public class BlocBusinessGenerator extends BusinessGenerator {
     }
 
     protected String provideTemplateFolder() {
-        if (data.getBusinessCategory() == BusinessCategory.SCREEN) {
-            return "bloc_screen_business";
+        if (data.getBusinessCategory() == BusinessCategory.PAGE) {
+            return "bloc_page_business";
         }
         if (data.getBusinessCategory() == BusinessCategory.WIDGET) {
             return "bloc_widget_business";
@@ -24,14 +24,14 @@ public class BlocBusinessGenerator extends BusinessGenerator {
     }
 
     protected List<String> provideTemplateFilesTree() {
-        if (data.getBusinessCategory() == BusinessCategory.SCREEN) {
+        if (data.getBusinessCategory() == BusinessCategory.PAGE) {
             return Arrays.asList(
                     "bloc",
                     "bloc/business_bloc.dart.template",
                     "bloc/business_event.dart.template",
                     "bloc/business_state.dart.template",
                     "view",
-                    "view/business_screen.dart.template",
+                    "view/business_page.dart.template",
                     "view/business_view.dart.template",
                     "business.dart.template"
             );

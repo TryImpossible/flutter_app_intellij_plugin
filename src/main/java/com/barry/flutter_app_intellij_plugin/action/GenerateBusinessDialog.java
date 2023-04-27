@@ -1,8 +1,6 @@
 package com.barry.flutter_app_intellij_plugin.action;
 
 import com.barry.flutter_app_intellij_plugin.common.NotificationTools;
-import com.intellij.notification.NotificationGroupManager;
-import com.intellij.notification.NotificationType;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
 import org.jetbrains.annotations.Nullable;
@@ -19,7 +17,7 @@ public class GenerateBusinessDialog extends DialogWrapper {
     private final Listener listener;
     private JPanel contentPane;
     private JTextField businessNameTextField;
-    private JRadioButton screenRadioButton;
+    private JRadioButton pageRadioButton;
     private JRadioButton widgetRadioButton;
     private JRadioButton blocRadioButton;
     private JRadioButton cubeRadioButton;
@@ -51,9 +49,9 @@ public class GenerateBusinessDialog extends DialogWrapper {
         }
 
         super.doOKAction();
-        BusinessCategory businessCategory = BusinessCategory.SCREEN;
-        if (screenRadioButton.isSelected()) {
-            businessCategory = BusinessCategory.SCREEN;
+        BusinessCategory businessCategory = BusinessCategory.PAGE;
+        if (pageRadioButton.isSelected()) {
+            businessCategory = BusinessCategory.PAGE;
         }
         if (widgetRadioButton.isSelected()) {
             businessCategory = BusinessCategory.WIDGET;

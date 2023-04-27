@@ -1,4 +1,4 @@
-part of '{{business_snake_case}}_screen.dart';
+part of '{{business_snake_case}}_page.dart';
 
 class {{business_pascal_case}}View extends StatelessWidget {
   const {{business_pascal_case}}View({Key? key}) : super(key: key);

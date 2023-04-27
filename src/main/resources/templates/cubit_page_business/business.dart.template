@@ -1,2 +1,2 @@
 export 'cubit/{{business_snake_case}}_cubit.dart';
-export 'view/{{business_snake_case}}_screen.dart';
+export 'view/{{business_snake_case}}_page.dart';
