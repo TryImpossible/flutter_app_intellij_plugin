@@ -24,3 +24,12 @@ class {{business_pascal_case}}RequestDataEvent extends {{business_pascal_case}}E
   @override
   List<Object?> get props => <Object?>[];
 }
+
+class {{business_pascal_case}}UpdateStateEvent extends {{business_pascal_case}}Event {
+  const {{business_pascal_case}}UpdateStateEvent(this.state);
+
+  final {{business_pascal_case}}State state;
+
+  @override
+  List<Object?> get props => <Object?>[state];
+}
